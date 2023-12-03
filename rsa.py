@@ -33,7 +33,7 @@ if prime(int (p)):
             to_ascii = [ord(char) for char in message]  # convert every character to ascii  
 
             if message:
-                st.write (f"{message} to ascii: {to_ascii}")  
+                st.info (f"**:green[{message}]** to ascii: {to_ascii}")  
 
 
                 encrypted = [] 
@@ -43,7 +43,7 @@ if prime(int (p)):
                     for char in to_ascii: 
                         encr = (char**r) % n 
                         encrypted.append(encr) 
-                    st.write (f"Encrypted ASCII: {encrypted}") 
+                    st.info (f"Encrypted ASCII: {encrypted}") 
                 encryption() 
 
                 # function to decrypt the message 
@@ -51,12 +51,12 @@ if prime(int (p)):
                     for char in encrypted: 
                         decr = (char**s) % n 
                         decrypted.append(decr) 
-                    st.write (f"Decrypted ASCII: {decrypted}") 
+                    st.info (f"Decrypted ASCII: {decrypted}") 
                 decryption() 
 
                 to_string = ''.join(chr(value) for value in decrypted) # convert every ascii to character 
 
-                st.write(f"Decrypted message: {to_string}") 
+                st.success(f"Decrypted message: {to_string}") 
 
         else: 
             st.error(f"{r} and {L} are NOT coprime")  
