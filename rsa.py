@@ -32,30 +32,31 @@ if prime(int (p)):
 
             to_ascii = [ord(char) for char in message]  # convert every character to ascii  
 
-            st.write (f"{message} to ascii: {to_ascii}")  
+            if message:
+                st.write (f"{message} to ascii: {to_ascii}")  
 
 
-            encrypted = [] 
-            decrypted = [] 
-            # function to encrypt the message 
-            def encryption(): 
-                for char in to_ascii: 
-                    encr = (char**r) % n 
-                    encrypted.append(encr) 
-                st.write (f"Encrypted ASCII: {encrypted}") 
-            encryption() 
+                encrypted = [] 
+                decrypted = [] 
+                # function to encrypt the message 
+                def encryption(): 
+                    for char in to_ascii: 
+                        encr = (char**r) % n 
+                        encrypted.append(encr) 
+                    st.write (f"Encrypted ASCII: {encrypted}") 
+                encryption() 
 
-            # function to decrypt the message 
-            def decryption(): 
-                for char in encrypted: 
-                    decr = (char**s) % n 
-                    decrypted.append(decr) 
-                st.write (f"Decrypted ASCII: {decrypted}") 
-            decryption() 
+                # function to decrypt the message 
+                def decryption(): 
+                    for char in encrypted: 
+                        decr = (char**s) % n 
+                        decrypted.append(decr) 
+                    st.write (f"Decrypted ASCII: {decrypted}") 
+                decryption() 
 
-            to_string = ''.join(chr(value) for value in decrypted) # convert every ascii to character 
+                to_string = ''.join(chr(value) for value in decrypted) # convert every ascii to character 
 
-            st.write(f"Decrypted message: {to_string}") 
+                st.write(f"Decrypted message: {to_string}") 
 
         else: 
             st.error(f"{r} and {L} are NOT coprime")  
@@ -63,11 +64,4 @@ if prime(int (p)):
     else: 
         st.error(f"{q} is NOT a prime number")  
 else: 
-    st.error(f"{p} is NOT a prime number")  
-
- 
- 
- 
- 
-
- 
+    st.error(f"{p} is NOT a prime number") 
