@@ -22,18 +22,20 @@ if prime(int (p)):
 
         r = st.number_input('Enter r',min_value=0)  
 
-        st.write('r is ', r)  
+          
 
         if (math.gcd(r,L)) == 1:  
             n = p*q  
             s = pow (r, -1, L)  
+
+            st.write('r is ', r)
 
             message = st.text_input('Enter the message', '')  
 
             to_ascii = [ord(char) for char in message]  # convert every character to ascii  
 
             if message:
-                st.info (f"**:green[{message}]** to ascii: {to_ascii}")  
+                st.info (f"**:red[{message}]** to ascii:  \n :orange[{to_ascii}]")  
 
 
                 encrypted = [] 
@@ -43,7 +45,7 @@ if prime(int (p)):
                     for char in to_ascii: 
                         encr = (char**r) % n 
                         encrypted.append(encr) 
-                    st.info (f"Encrypted ASCII: {encrypted}") 
+                    st.info (f"Encrypted ASCII:  \n :orange[{encrypted}]") 
                 encryption() 
 
                 # function to decrypt the message 
@@ -51,12 +53,12 @@ if prime(int (p)):
                     for char in encrypted: 
                         decr = (char**s) % n 
                         decrypted.append(decr) 
-                    st.info (f"Decrypted ASCII: {decrypted}") 
+                    st.info (f"Decrypted ASCII:  \n :orange[{decrypted}]") 
                 decryption() 
 
                 to_string = ''.join(chr(value) for value in decrypted) # convert every ascii to character 
 
-                st.success(f"Decrypted message: {to_string}") 
+                st.success(f"Decrypted message:  \n **:red[{to_string}]**") 
 
         else: 
             st.error(f"{r} and {L} are NOT coprime")  
