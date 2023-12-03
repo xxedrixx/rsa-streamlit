@@ -11,16 +11,16 @@ def prime(num):
             return False  
     return True  
 
-p = st.number_input('Enter p',min_value=0)  
+p = st.number_input('Enter p',min_value=0, max_value=4999)  
 if prime(int (p)):  
     st.write('p is ', p) 
-    q = st.number_input('Enter q',min_value=0)  
+    q = st.number_input('Enter q',min_value=0, max_value=4999)  
     if prime(int (q)):  
         st.write('q is ', q) 
 
         L = math.lcm(p-1,q-1)  
 
-        r = st.number_input('Enter r',min_value=0)  
+        r = st.number_input('Enter r',min_value=0, max_value=4999)  
 
           
 
