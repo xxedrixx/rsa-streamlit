@@ -14,21 +14,28 @@ def prime(num):
 p = st.number_input('Enter p',min_value=0, max_value=4999)  
 if prime(int (p)):  
     st.write('p is ', p) 
+    with st.sidebar:
+        st.write("p =",p)
     q = st.number_input('Enter q',min_value=0, max_value=4999)  
     if prime(int (q)):  
-        st.write('q is ', q) 
+        st.write('q is ', q)
+        with st.sidebar:
+            st.write("q =",q)
 
         L = math.lcm(p-1,q-1)  
-
+        
         r = st.number_input('Enter r',min_value=0, max_value=4999)  
-
-          
-
+    
         if (math.gcd(r,L)) == 1:  
             n = p*q  
             s = pow (r, -1, L)  
 
             st.write('r is ', r)
+            with st.sidebar:
+                st.write("n =",n)
+                st.write("L =", L)
+                st.write("r =",r)
+                st.write("s =",s)
 
             message = st.text_input('Enter the message', '')  
 
@@ -66,4 +73,4 @@ if prime(int (p)):
     else: 
         st.error(f"{q} is NOT a prime number")  
 else: 
-    st.error(f"{p} is NOT a prime number") 
+    st.error(f"{p} is NOT a prime number")    
