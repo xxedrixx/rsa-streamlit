@@ -18,26 +18,27 @@ if prime(int (p)):
     st.write('p is ', p) 
     with st.sidebar:
         st.write("p =",p)
-    q = st.number_input('Enter q',min_value=0, max_value=4999)  
+    q = st.number_input('Enter q',min_value=0, max_value=4999) 
+    n = p*q  
+    L = math.lcm(p-1,q-1) 
+
     if prime(int (q)):  
         st.write('q is ', q)
         with st.sidebar:
             st.write("q =",q)
-
-        L = math.lcm(p-1,q-1)  
+            st.write("n = p*q  \n n =",n)
+            st.write("L = lcm(p-1)(q-1)  \n L =", L )
+         
         
         r = st.number_input('Enter r',min_value=0, max_value=4999)  
     
         if (math.gcd(r,L)) == 1:  
-            n = p*q  
             s = pow (r, -1, L)  
 
             st.write('r is ', r)
-            with st.sidebar:
-                st.write("n =",n)
-                st.write("L =", L)
+            with st.sidebar:               
                 st.write("r =",r)
-                st.write("s =",s)
+                st.write("r*s [n] = 1   \ns =",s)
 
             message = st.text_input('Enter the message', '')  
 
