@@ -40,7 +40,7 @@ if prime(int (p)):
                 st.write("r =",r)
                 st.write("r*s [n] = 1   \ns =",s)
 
-            message = st.text_input('Enter the message', '')  
+            message = st.text_area('Enter the message', '')  
 
             to_ascii = [ord(char) for char in message]  # convert every character to ascii  
 
