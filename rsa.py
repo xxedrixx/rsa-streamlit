@@ -2,6 +2,8 @@ import streamlit as st
 import math  
 
 st.title("RSA Encryption")  
+with st.sidebar:
+    st.title("Info")
 
 def prime(num):  
     if num < 2:  
